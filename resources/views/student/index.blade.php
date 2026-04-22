@@ -47,17 +47,13 @@
                                         <td>johnelladondon@sample.com</td>
                                     </tr>
                                     <tr>
-<<<<<<< HEAD
                                         <td>Precious Maniacop</td>
                                         <td>preciousmaniacop@sample.com</td>
                                     </tr>
-=======
+
                                         <td>John Cedric</td>
                                         <td>johnecedric@sample.com</td>
                                     </tr>
-                                        
-                                        
->>>>>>> 15a30511e58c43c8e72c5a58cd0bb663cda6fa8f
                                 {{-- @endforeach --}}
                                 </tbody>
                             </table>
