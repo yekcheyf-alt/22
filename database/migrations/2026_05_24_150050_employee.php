@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('lname');
             $table->string('mname');
              $table->string('age');
-                        $table->string('zipcode');
-                              $table->string('address');
+            $table->string('zipcode');
+            $table->string('address');
             $table->timestamps();
         });
     }

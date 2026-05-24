@@ -8,8 +8,8 @@ class employeeController extends Controller
 {
     public function index()
     {
-        $employee = \App\Models\employee::all();
-        return view('employee.index', compact('employee'));
+        $employees = \App\Models\employee::all();
+        return view('employee.index', compact('employees'));
     }
 
     public function create()
@@ -35,8 +35,8 @@ class employeeController extends Controller
 
     public function edit($id)
     {
-        $employee = \App\Models\employee::findOrFail($id);
-        return view('employee.edit', compact('employee'));
+        $employees = \App\Models\employee::findOrFail($id);
+        return view('employee.edit', compact('employees'));
     }
 
     public function update(Request $request, $id)
@@ -50,16 +50,16 @@ class employeeController extends Controller
             'address' => 'required',
         ]);
 
-        $employee = \App\Models\employee::findOrFail($id);
-        $employee->update($request->all());
+        $employees = \App\Models\employee::findOrFail($id);
+        $employees->update($request->all());
 
         return redirect()->route('employee.index')->with('success', 'Employee updated successfully.');
     }
 
     public function destroy($id)
     {
-        $employee = \App\Models\employee::findOrFail($id);
-        $employee->delete();
+        $employees = \App\Models\employee::findOrFail($id);
+        $employees->delete();
 
         return redirect()->route('employee.index')->with('success', 'Employee deleted successfully.');
     }
