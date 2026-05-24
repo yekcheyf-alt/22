@@ -9,12 +9,12 @@ class employeeController extends Controller
     public function index()
     {
         $employees = employee::all();
-        return view('employees.index', compact('employees'));
+        return view('employee.index', compact('employees'));
     }
 
     public function create()
     {
-        return view('employees.create');
+        return view('employee.create');
     }
 
     public function store(Request $request)
@@ -30,13 +30,13 @@ class employeeController extends Controller
 
         employee::create($request->all());
 
-        return redirect()->route('employee.index')->with('success', 'Employee created successfully.');
+        return redirect()->route('employees.index')->with('success', 'Employee created successfully.');
     }
 
     public function edit($id)
     {
         $employees = employee::findOrFail($id);
-        return view('employees.edit', compact('employees'));
+        return view('employee.edit', compact('employees'));
     }
 
     public function update(Request $request, $id)
