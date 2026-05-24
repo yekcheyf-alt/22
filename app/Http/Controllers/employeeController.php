@@ -9,12 +9,12 @@ class employeeController extends Controller
     public function index()
     {
         $employees = employee::all();
-        return view('employee.index', compact('employees'));
+        return view('employees.index', compact('employees'));
     }
 
     public function create()
     {
-        return view('employee.create');
+        return view('employees.create');
     }
 
     public function store(Request $request)
@@ -36,7 +36,7 @@ class employeeController extends Controller
     public function edit($id)
     {
         $employees = employee::findOrFail($id);
-        return view('employee.edit', compact('employees'));
+        return view('employees.edit', compact('employees'));
     }
 
     public function update(Request $request, $id)
@@ -53,7 +53,7 @@ class employeeController extends Controller
         $employees = employee::findOrFail($id);
         $employees->update($request->all());
 
-        return redirect()->route('employee.index')->with('success', 'Employee updated successfully.');
+        return redirect()->route('employees.index')->with('success', 'Employee updated successfully.');
     }
 
     public function destroy($id)
@@ -61,6 +61,6 @@ class employeeController extends Controller
         $employees = employee::findOrFail($id);
         $employees->delete();
 
-        return redirect()->route('employee.index')->with('success', 'Employee deleted successfully.');
+        return redirect()->route('employees.index')->with('success', 'Employee deleted successfully.');
     }
 }
